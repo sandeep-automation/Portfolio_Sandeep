@@ -7,7 +7,7 @@ export const personalInfo = {
   email: 'sandeepgannamani55@gmail.com',
   phone: '+91-9502228584',
   linkedin: 'https://linkedin.com/in/sandeepgannamani',
-  github: 'https://github.com/sandeepgannamani',
+  github: 'https://github.com/sandeep-automation',
   experienceYears: '4+',
   resumePath: '/resume.pdf',
   seoTitle: 'Gannamani Sandeep — Senior Automation Engineer / SDET',
@@ -114,7 +114,7 @@ export const projects = [
       'Production-grade Playwright (TypeScript) E2E suite for carrier-grade OSS/BSS infrastructure serving millions of subscribers.',
     technologies: ['Playwright', 'TypeScript', 'Docker', 'Node.js', 'Jenkins', 'GitHub Actions'],
     image: `${import.meta.env.BASE_URL}work/nokia.png?v=2`,
-    link: 'https://github.com/sandeepgannamani',
+    link: 'https://github.com/sandeep-automation',
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
       'When a carrier order is placed, OSS/BSS systems provision network services for millions of subscribers. Quality has to keep up with that live flow — not inspect it after the fact.',
@@ -147,7 +147,7 @@ export const projects = [
       'Quality engineering for a port and cargo management system handling high-volume daily transactions across major releases.',
     technologies: ['API Testing', 'Postman', 'SQL', 'JIRA', 'REST APIs'],
     image: `${import.meta.env.BASE_URL}work/gulftainer.png?v=2`,
-    link: 'https://github.com/sandeepgannamani',
+    link: 'https://github.com/sandeep-automation',
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
       'Every container move is a transaction: gate-in, yard, vessel, invoice. The quality loop has to prove those events stay consistent while the port is still running.',
