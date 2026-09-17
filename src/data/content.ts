@@ -1,3 +1,5 @@
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 export const personalInfo = {
   name: 'Gannamani Sandeep',
   firstName: 'Sandeep',
@@ -6,10 +8,10 @@ export const personalInfo = {
   location: 'Hyderabad, India',
   email: 'sandeepgannamani55@gmail.com',
   phone: '+91-9502228584',
-  linkedin: 'https://linkedin.com/in/sandeepgannamani',
+  linkedin: 'https://www.linkedin.com/in/sandeep-gannamani-5ab26a1ba',
   github: 'https://github.com/sandeep-automation',
   experienceYears: '4+',
-  resumePath: '/resume.pdf',
+  resumePath: asset('resume.pdf'),
   seoTitle: 'Gannamani Sandeep — Senior Automation Engineer / SDET',
   seoDescription:
     'Senior Automation Engineer building premium test frameworks, interactive quality pipelines and reliable digital products.',
@@ -113,7 +115,7 @@ export const projects = [
     description:
       'Production-grade Playwright (TypeScript) E2E suite for carrier-grade OSS/BSS infrastructure serving millions of subscribers.',
     technologies: ['Playwright', 'TypeScript', 'Docker', 'Node.js', 'Jenkins', 'GitHub Actions'],
-    image: '/work/nokia.png?v=2',
+    image: `${asset('work/nokia.png')}?v=2`,
     link: 'https://github.com/sandeepgannamani',
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
@@ -146,7 +148,7 @@ export const projects = [
     description:
       'Quality engineering for a port and cargo management system handling high-volume daily transactions across major releases.',
     technologies: ['API Testing', 'Postman', 'SQL', 'JIRA', 'REST APIs'],
-    image: '/work/gulftainer.png?v=2',
+    image: `${asset('work/gulftainer.png')}?v=2`,
     link: 'https://github.com/sandeepgannamani',
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:

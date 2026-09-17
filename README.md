@@ -38,6 +38,12 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173)
 
+## Live site
+
+After GitHub Pages deploys: [https://sandeep-automation.github.io/Portfolio_Sandeep/](https://sandeep-automation.github.io/Portfolio_Sandeep/)
+
+`https://sandeepgannamani.github.io` 404s until the GitHub username is `sandeepgannamani` and a matching `sandeepgannamani.github.io` repo exists.
+
 ## Build
 
 ```bash
