@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { personalInfo } from '../data/content'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 
 interface LoadingScreenProps {
@@ -42,8 +41,11 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: 'easeInOut' }}
     >
-      <p className="display text-5xl text-ink sm:text-6xl">{personalInfo.logo}</p>
-      <p className="mt-6 text-[11px] tracking-[0.32em] text-muted uppercase">Welcome to Sandeep&apos;s portfolio</p>
+      <p className="display text-5xl text-ink sm:text-6xl">Welcome to the portfolio</p>
+      <p className="mt-6 text-[11px] tracking-[0.32em] text-muted uppercase">Senior Automation Engineer / SDET</p>
+      <p className="mt-3 text-[10px] tracking-[0.24em] text-muted uppercase">
+        Playwright · Test Automation · Quality Engineering
+      </p>
       <div className="mt-10 h-px w-40 overflow-hidden bg-line">
         <motion.div className="h-full bg-ink" animate={{ width: `${progress}%` }} />
       </div>
