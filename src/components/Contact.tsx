@@ -7,7 +7,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: projectTypes[0],
+    projectType: '',
     message: '',
   })
 
@@ -92,10 +92,14 @@ export default function Contact() {
           <Field label="Project Type">
             <select
               id="projectType"
+              required
               value={formData.projectType}
               onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
               className="field"
             >
+              <option value="" disabled>
+                Choose a project type
+              </option>
               {projectTypes.map((type) => (
                 <option key={type} value={type}>
                   {type}
