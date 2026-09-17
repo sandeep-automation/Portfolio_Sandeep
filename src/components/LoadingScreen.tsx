@@ -43,7 +43,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       transition={{ duration: 0.6, ease: 'easeInOut' }}
     >
       <p className="display text-5xl text-ink sm:text-6xl">{personalInfo.logo}</p>
-      <p className="mt-6 text-[11px] tracking-[0.32em] text-muted uppercase">Loading experience...</p>
+      <p className="mt-6 text-[11px] tracking-[0.32em] text-muted uppercase">Welcome to Sandeep&apos;s portfolio</p>
       <div className="mt-10 h-px w-40 overflow-hidden bg-line">
         <motion.div className="h-full bg-ink" animate={{ width: `${progress}%` }} />
       </div>
