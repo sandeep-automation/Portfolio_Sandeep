@@ -6,7 +6,7 @@ export const personalInfo = {
   location: 'Hyderabad, India',
   email: 'sandeepgannamani55@gmail.com',
   phone: '+91-9502228584',
-  linkedin: 'https://linkedin.com/in/sandeepgannamani',
+  linkedin: 'https://www.linkedin.com/in/sandeep-gannamani-5ab26a1ba',
   github: 'https://github.com/sandeep-automation',
   experienceYears: '4+',
   resumePath: '/resume.pdf',
