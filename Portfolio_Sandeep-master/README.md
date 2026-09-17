@@ -38,7 +38,7 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173)
 
-For GitHub Pages, enable the `GitHub Actions` source in the repository's Pages settings. The deployment workflow publishes the site at [https://sandeep-automation.github.io/Portfolio_Sandeep/](https://sandeep-automation.github.io/Portfolio_Sandeep/).
+For GitHub Pages, set the source to `Deploy from a branch`, choose `main`, and choose `/docs` as the folder. The site is published at [https://sandeep-automation.github.io/Portfolio_Sandeep/](https://sandeep-automation.github.io/Portfolio_Sandeep/).
 
 ## Build
 
