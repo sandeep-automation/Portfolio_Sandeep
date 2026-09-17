@@ -3,6 +3,7 @@ import { personalInfo, projectTypes } from '../data/content'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}`
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,7 +38,7 @@ export default function Contact() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3" data-reveal="up">
-            <a href={`mailto:${personalInfo.email}`} className="btn-primary">
+            <a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Start a Project
             </a>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn-secondary">
@@ -47,7 +48,7 @@ export default function Contact() {
 
           <ul className="mt-12 space-y-3 text-sm text-muted" data-reveal="up">
             <li>
-              <a href={`mailto:${personalInfo.email}`} className="hover:text-ink">
+              <a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
                 {personalInfo.email}
               </a>
             </li>
