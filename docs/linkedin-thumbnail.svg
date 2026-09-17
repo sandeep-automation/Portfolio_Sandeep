@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Gannamani Sandeep - Senior Automation Engineer</title>
+  <desc id="desc">Portfolio preview for Gannamani Sandeep, Senior Automation Engineer and SDET.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#182c3d"/>
+      <stop offset="0.55" stop-color="#21536a"/>
+      <stop offset="1" stop-color="#d97850"/>
+    </linearGradient>
+    <linearGradient id="portrait" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4dfc0"/>
+      <stop offset="1" stop-color="#d6a878"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#07141e" flood-opacity="0.32"/>
+    </filter>
+    <clipPath id="portraitClip">
+      <circle cx="215" cy="315" r="142"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <path d="M0 520C220 445 380 560 590 496s378-66 610 18v116H0Z" fill="#0f2735" opacity=".42"/>
+  <path d="M720 0h480v630H945c-37-176-104-327-225-454Z" fill="#f8e8ca" opacity=".06"/>
+
+  <circle cx="215" cy="315" r="151" fill="#eef1e7" opacity=".96" filter="url(#shadow)"/>
+  <circle cx="215" cy="315" r="142" fill="url(#portrait)"/>
+  <g clip-path="url(#portraitClip)">
+    <path d="M62 510c22-113 80-163 153-163s131 50 153 163Z" fill="#172b49"/>
+    <path d="M139 350h152l-24 160H163Z" fill="#f7f0e5"/>
+    <path d="M132 512h166l-34-147H166Z" fill="#243d62"/>
+    <path d="m194 386 21 40 22-40v-48h-43Z" fill="#d58e63"/>
+    <ellipse cx="215" cy="274" rx="68" ry="82" fill="#9b5b3d"/>
+    <path d="M143 266c-7-55 28-106 77-106 53 0 78 43 69 103-20-18-38-36-53-56-18 26-48 50-93 59Z" fill="#31251f"/>
+    <path d="M149 235c9-42 40-70 76-70 35 0 61 20 72 55-28-18-58-25-90-13-18 7-37 18-58 28Z" fill="#3d2b23"/>
+    <ellipse cx="187" cy="278" rx="7" ry="9" fill="#172027"/>
+    <ellipse cx="244" cy="278" rx="7" ry="9" fill="#172027"/>
+    <path d="M203 314c9 8 21 8 30 0" fill="none" stroke="#5e3029" stroke-width="5" stroke-linecap="round"/>
+    <path d="M173 254c10-7 20-8 29-2M229 252c10-6 20-5 29 2" fill="none" stroke="#3b2822" stroke-width="6" stroke-linecap="round"/>
+    <path d="M198 288c-4 15-4 24 5 26" fill="none" stroke="#75412f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M170 364 215 410l45-46" fill="#f7f0e5"/>
+  </g>
+  <circle cx="215" cy="315" r="142" fill="none" stroke="#f5eee2" stroke-width="5"/>
+
+  <g fill="#f4efe5" font-family="Arial, Helvetica, sans-serif">
+    <text x="445" y="154" font-size="24" letter-spacing="6" fill="#e4b49a">SANDEEP / PORTFOLIO</text>
+    <text x="445" y="234" font-size="58" font-weight="700">Gannamani Sandeep</text>
+    <text x="445" y="286" font-size="29" font-weight="600" fill="#f5d9c6">Senior Automation Engineer / SDET</text>
+    <text x="445" y="330" font-size="20" fill="#d3e0df">Playwright · TypeScript · Quality Engineering</text>
+    <text x="445" y="370" font-size="18" fill="#bfd0d0">Hyderabad, India  /  4+ years building reliable test systems</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="445" y="425" width="190" height="112" rx="13" fill="#285e87"/>
+    <rect x="655" y="425" width="190" height="112" rx="13" fill="#f4eee2"/>
+    <rect x="865" y="425" width="190" height="112" rx="13" fill="#d97850"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="472" y="462" font-size="16" fill="#d7e6e8" letter-spacing="2">PLAYWRIGHT</text>
+    <text x="472" y="496" font-size="21" font-weight="700" fill="#fff">E2E + API</text>
+    <path d="M472 515h105" stroke="#a8cbd1" stroke-width="5" stroke-linecap="round"/>
+    <text x="682" y="462" font-size="16" fill="#63808b" letter-spacing="2">COVERAGE</text>
+    <text x="682" y="496" font-size="34" font-weight="700" fill="#183345">95%</text>
+    <path d="M682 515h105" stroke="#b1c0bd" stroke-width="5" stroke-linecap="round"/>
+    <text x="892" y="462" font-size="16" fill="#f9dfcf" letter-spacing="2">PIPELINES</text>
+    <text x="892" y="496" font-size="21" font-weight="700" fill="#fff">CI / CD</text>
+    <path d="M892 515h105" stroke="#f4b397" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
