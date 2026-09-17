@@ -113,7 +113,7 @@ export const projects = [
     description:
       'Production-grade Playwright (TypeScript) E2E suite for carrier-grade OSS/BSS infrastructure serving millions of subscribers.',
     technologies: ['Playwright', 'TypeScript', 'Docker', 'Node.js', 'Jenkins', 'GitHub Actions'],
-    image: '/work/nokia.png?v=2',
+    image: `${import.meta.env.BASE_URL}work/nokia.png?v=2`,
     link: 'https://github.com/sandeepgannamani',
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
@@ -146,7 +146,7 @@ export const projects = [
     description:
       'Quality engineering for a port and cargo management system handling high-volume daily transactions across major releases.',
     technologies: ['API Testing', 'Postman', 'SQL', 'JIRA', 'REST APIs'],
-    image: '/work/gulftainer.png?v=2',
+    image: `${import.meta.env.BASE_URL}work/gulftainer.png?v=2`,
     link: 'https://github.com/sandeepgannamani',
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
