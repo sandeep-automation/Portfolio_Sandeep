@@ -11,7 +11,7 @@ This repository is the source of truth for the live site. Rebuild and content wo
 - Nokia and Gulftainer work with live walkthrough overlays
 - 1500+ test cases in About stats
 - Contact Name field left empty
-- Custom cursor on fine pointers only
+- Resume download in nav, hero, contact, and footer (`public/resume/`)
 
 ## What this site is not
 
@@ -54,7 +54,7 @@ npm run preview
 ## Customization
 
 - **Copy, skills, work, stats**: `src/data/content.ts`
-- **Resume**: `public/resume.pdf`
+- **Resume**: drop any PDF in `public/resume/`. After a GitHub push, Pages builds and Resume downloads the newest file in that folder.
 - **Work images**: `public/work/nokia.png`, `public/work/gulftainer.png`
 
-Page order is fixed in `src/App.tsx`. Nav is Home · About · Skills · Work · Contact. Services, Why Work, Achievements, and Community sit on the page but are not in the nav.
+Page order is fixed in `src/App.tsx`. Nav is Home · About · Skills · Work · Resume · Contact. Resume downloads the PDF. Services, Why Work, and Achievements sit on the page but are not in the nav.

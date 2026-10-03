@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import LoadingScreen from './components/LoadingScreen'
-import CustomCursor from './components/CustomCursor'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -12,8 +11,8 @@ import Skills from './components/Skills'
 import Services from './components/Services'
 import WhyWork from './components/WhyWork'
 import Achievements from './components/Achievements'
-import Community from './components/Community'
 import Contact from './components/Contact'
+import WorkTogether from './components/WorkTogether'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import { useLenis } from './hooks/useLenis'
@@ -38,7 +37,6 @@ function App() {
 
       {ready && (
         <>
-          <CustomCursor />
           <Navbar />
           <main>
             <Hero />
@@ -50,8 +48,8 @@ function App() {
             <Services />
             <WhyWork />
             <Achievements />
-            <Community />
             <Contact />
+            <WorkTogether />
             <FinalCTA />
           </main>
           <Footer />

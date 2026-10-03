@@ -1,3 +1,5 @@
+import { scrollToId } from '../hooks/useLenis'
+
 export default function FinalCTA() {
   return (
     <section className="section-pad border-t border-line">
@@ -6,7 +8,14 @@ export default function FinalCTA() {
           Your next release could feel like this.
         </h2>
         <p className="mt-6 text-muted">Let&apos;s make it happen.</p>
-        <a href="#contact" className="btn-primary mt-10">
+        <a
+          href="#together"
+          className="btn-primary mt-10"
+          onClick={(event) => {
+            event.preventDefault()
+            scrollToId('#together')
+          }}
+        >
           Start a Project →
         </a>
       </div>

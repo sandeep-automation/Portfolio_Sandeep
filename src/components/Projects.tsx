@@ -45,8 +45,7 @@ export default function Projects() {
           <article key={project.id} className="group" data-reveal="up">
             <button
               type="button"
-              data-cursor="explore"
-              className="relative block w-full overflow-hidden text-left"
+              className="relative block w-full overflow-hidden text-left cursor-pointer"
               onClick={() => setActive(project)}
               aria-haspopup="dialog"
               aria-expanded={active?.id === project.id}
@@ -81,9 +80,8 @@ export default function Projects() {
               </div>
               <button
                 type="button"
-                data-cursor="explore"
                 onClick={() => setActive(project)}
-                className="inline-flex items-center gap-2 text-[11px] tracking-[0.22em] text-ink uppercase"
+                className="inline-flex items-center gap-2 text-[11px] tracking-[0.22em] text-ink uppercase cursor-pointer"
               >
                 Explore real time
                 <ArrowUpRight
@@ -163,6 +161,14 @@ function ProjectWalkthrough({ project, onClose }: { project: Project; onClose: (
         <p className="mt-8 text-[11px] tracking-[0.16em] text-muted uppercase">
           {project.technologies.join(' · ')}
         </p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-flex text-[11px] tracking-[0.22em] text-ink uppercase hover:text-muted"
+        >
+          GitHub
+        </a>
       </div>
     </div>
   )

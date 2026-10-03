@@ -44,22 +44,32 @@ export default function Navbar() {
             {personalInfo.logo}
           </a>
 
-          <ul className="hidden items-center gap-8 lg:flex">
+          <ul className="hidden items-center gap-6 xl:gap-8 lg:flex">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={goTo(link.href)}
-                  className="text-[11px] tracking-[0.2em] text-muted uppercase transition-colors duration-300 hover:text-ink"
-                >
-                  {link.label}
-                </a>
+              <li key={link.label}>
+                {link.download ? (
+                  <a
+                    href={link.href}
+                    download={link.download}
+                    className="text-[11px] tracking-[0.2em] text-muted uppercase transition-colors duration-300 hover:text-ink"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={goTo(link.href)}
+                    className="text-[11px] tracking-[0.2em] text-muted uppercase transition-colors duration-300 hover:text-ink"
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
 
           <div className="hidden lg:block">
-            <a href="#contact" onClick={goTo('#contact')} className="btn-secondary !px-5 !py-2">
+            <a href="#together" onClick={goTo('#together')} className="btn-secondary !px-5 !py-2">
               Let&apos;s Work Together
             </a>
           </div>
@@ -90,14 +100,25 @@ export default function Navbar() {
           </div>
           <ul className="flex flex-1 flex-col justify-center gap-8">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="display text-5xl text-ink" onClick={goTo(link.href)}>
-                  {link.label}
-                </a>
+              <li key={link.label}>
+                {link.download ? (
+                  <a
+                    href={link.href}
+                    download={link.download}
+                    className="display text-5xl text-ink"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a href={link.href} className="display text-5xl text-ink" onClick={goTo(link.href)}>
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
-          <a href="#contact" className="btn-primary w-fit" onClick={goTo('#contact')}>
+          <a href="#together" className="btn-primary w-fit" onClick={goTo('#together')}>
             Let&apos;s Work Together
           </a>
         </div>

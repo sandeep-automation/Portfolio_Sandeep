@@ -11,6 +11,13 @@ export default function Footer() {
         <p>Built with curiosity + code</p>
         <div className="flex items-center gap-5">
           <a
+            href={personalInfo.resumePath}
+            download={personalInfo.resumeFileName}
+            className="text-ink hover:text-muted"
+          >
+            Resume
+          </a>
+          <a
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"

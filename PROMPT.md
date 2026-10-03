@@ -11,7 +11,7 @@ Use this file as the rebuild spec. The live site in this repo is the source of t
 - Email: `sandeepgannamani55@gmail.com`
 - Phone: `+91-9502228584`
 - LinkedIn: `https://www.linkedin.com/in/sandeep-gannamani-5ab26a1ba`
-- GitHub: `https://github.com/sandeepgannamani`
+- GitHub: `https://github.com/sandeep-automation`
 - Experience: 4+ years at Tata Consultancy Services (TCS), Hyderabad — March 2022 – Present
 
 Never use Sri, Sushmita, Aisha Rao, LeetCode, or any other placeholder persona. Never swap this into a designer / frontend-dev portfolio.
@@ -32,8 +32,7 @@ Editorial dark, not neon, not glassmorphism, not a 3D scene.
 - No portraits anywhere — hero, about, loading, and overlays are text-only
 - No 360, no canvas, no WebGL, no hero video, no blink frames
 - No music player
-- Custom cursor only when `(hover: hover) and (pointer: fine)`; otherwise native cursor
-- Honor `prefers-reduced-motion`
+- Honor `prefers-reduced-motion`. Native OS cursor — no custom circle cursor.
 
 ## Stack
 
@@ -43,7 +42,7 @@ All copy and lists live in `src/data/content.ts`. Do not scatter resume facts ac
 
 ## Page order
 
-Loading screen → Custom cursor → Navbar → main:
+Loading screen → Navbar → main:
 
 1. Hero (`#home`)
 2. Tech-stack marquee
@@ -51,20 +50,20 @@ Loading screen → Custom cursor → Navbar → main:
 4. Experience
 5. Selected Work (`#work`)
 6. Skills (`#skills`)
-7. Services (`#services`, on page, **not** in nav)
-8. Why work with me
+7. On a product team (`#services`, on page, **not** in nav)
+8. Why work with me — pipeline, a11y, JIRA trail, mentoring. Do **not** repeat About numbers.
 9. Achievements
-10. Community
-11. Contact (`#contact`)
+10. Contact (`#contact`) — contact info + Download Resume
+11. Let's work together (`#together`) — inquiry form
 12. Final CTA
 
 Footer.
 
-Nav links (desktop + mobile): **Home · About · Skills · Work · Contact**. Navbar CTA: `Let's Work Together`.
+Nav links (desktop + mobile): **Home · About · Skills · Work · Resume · Contact**. Resume downloads the **newest PDF** in `public/resume/` (resolved at Vite / GitHub Pages build). Not a page section. Navbar CTA: `Let's Work Together` scrolls to `#together`, not `#contact`.
 
 ## Loading
 
-Full-screen void. Display wordmark `SANDEEP`, `Loading experience...`, thin ink progress bar. Minimum ~900ms (shorter if reduced motion). No asset preload required.
+Full-screen void. Eyebrow `Quality before the first click`, headline `Proof before the product` (no name/wordmark), cycling STATUS lines at ~700ms (`Compiling coverage` / `Sharding the suite` / `Cutting flakiness` / `Giving hours back`), thin ink progress bar. Minimum ~2.2s (shorter if reduced motion). No asset preload required.
 
 ## Hero
 
@@ -73,8 +72,9 @@ Full viewport, void background, **text only**.
 - Top-left kicker: `HI, I'M SANDEEP`
 - Display title stacked: `AUTOMATION` / `ENGINEER`
 - Desktop right support: eyebrow `I TURN TESTS INTO TRUST` + one sentence about Playwright frameworks and production quality
+- Same support copy under the title on viewports smaller than `lg`
 - Bottom-left: `Scroll to explore`
-- Bottom-right: `View My Work` (`#work`) and filled `Contact Me` (`#contact`)
+- Bottom-right: `View My Work` (`#work`), filled `Contact Me` (`#contact`), `Resume` (downloads the PDF in `public/resume/`)
 - Screen-reader h1: name + role
 
 Do not add photos, spin frames, cycling headlines, or scroll-scrubbed 360.
@@ -85,7 +85,7 @@ Infinite uppercase loop of the flattened `skillGroups` list. Same items as Skill
 
 ## About
 
-Eyebrow `// System profile`. Display heading `Hello, I'm` / `Gannamani Sandeep`. Summary: Playwright (TypeScript/JavaScript), E2E frameworks for 100K+ users, 95% coverage, zero critical production defects.
+No section eyebrow. Display heading `What the work` / `returns.` — do not repeat the hero name or `AUTOMATION ENGINEER`. Summary: Playwright (TypeScript/JavaScript), E2E frameworks for 100K+ users, 95% coverage, 30+ hours saved, zero critical production defects. Eight impact highlights (30+ hrs, 8h→2h, 60%→85%, Zero, 10+ nodes, 150+ defects, 50K+ daily transactions, 99.5% SLA) then stats. All figures must already exist in experience / work — do not invent metrics.
 
 Three pills: Playwright (E2E & API), CI / CD (Jenkins · GHA), Quality (SDET).
 
@@ -102,7 +102,7 @@ Single role: Automation Test Engineer, TCS, Hyderabad, March 2022 – Present. K
 
 ## Selected Work
 
-Two case studies with large 16:9 images (`/work/nokia.png`, `/work/gulftainer.png`). Clicking the image or `Explore real time` opens a solid void overlay with a numbered real-time walkthrough, outcomes, and tech. Escape and backdrop click close it. Cursor hints: `explore` on image.
+Two case studies with large 16:9 images (`/work/nokia.png`, `/work/gulftainer.png`). Clicking the image or `Explore real time` opens a solid void overlay with a numbered real-time walkthrough, outcomes, tech, and a GitHub link to `sandeep-automation`. Escape and backdrop click close it.
 
 Keep the Nokia OSS/BSS and Gulftainer port/cargo walkthrough copy as written in `content.ts`. Do not replace with generic project cards.
 
@@ -119,26 +119,31 @@ Eyebrow `Tech Stack`. Heading `Technologies I work with.` Grouped uppercase hair
 
 Maven stays even without Java. Do not flatten into one ungrouped cloud unless asked.
 
-## Services / Why work / Achievements / Community / Contact / CTA
+## On a product team / Why work / Achievements / Contact / CTA
 
 Match existing headings and copy in `content.ts` / the components.
 
-Contact form: Name, Email, Project Type, Message. **Name placeholder is empty** (do not prefill Aisha Rao or any name). Submit opens a `mailto:` draft. Show email, LinkedIn, GitHub — phone is identity data, not required on the form.
+On a product team (`#services`): heading `What I bring` / `to the squad.` Capabilities, not a freelance menu.
+
+Why work with me: pipeline gates, a11y, JIRA/trace trail, mentoring. Do not repeat About hours/coverage/zero-critical cards.
+
+Contact (`#contact`): heading `How to reach me.` Email, LinkedIn slug, GitHub, phone. Primary button `Download Resume`. No form.
+
+Let's work together (`#together`): heading `Have an idea? Let's build it.` Form is Name, Email, Message only — **no Project Type select**. Name placeholder is empty (do not prefill Aisha Rao or any name). Submit opens a `mailto:` draft.
 
 Final CTA: `Your next release could feel like this.`
 
-Footer: `SANDEEP` · `Built with curiosity + code` · LinkedIn · GitHub · © 2026.
+Footer: `SANDEEP` · `Built with curiosity + code` · Resume download · LinkedIn · GitHub · © 2026.
 
 ## Motion
 
 - Lenis smooth scroll after loading
 - GSAP `[data-reveal="up"]` and `[data-reveal="stagger"]` / `[data-stagger-item]`
-- Custom cursor states: default, hover, view, explore
 - Marquee paused when reduced motion is on
 
 ## Do not add back
 
-Music player, Scene3D, ProfileAvatar, 360/blink hero, Certifications as its own section (certs already live under Achievements), Card3D, ScrollProgress, AutoTour, cycling hero stages, glassmorphism, dummy designer copy.
+Music player, Scene3D, ProfileAvatar, 360/blink hero, Certifications as its own section (certs already live under Achievements), Card3D, ScrollProgress, AutoTour, cycling hero stages, glassmorphism, dummy designer copy, Community as its own section, custom circle cursor.
 
 ## Done when
 

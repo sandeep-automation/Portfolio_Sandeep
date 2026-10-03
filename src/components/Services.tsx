@@ -1,14 +1,16 @@
-import { services } from '../data/content'
+import { services, servicesSection } from '../data/content'
 
 export default function Services() {
   return (
     <section id="services" className="section-pad border-t border-line">
       <div className="mx-auto max-w-6xl">
         <p className="eyebrow" data-reveal="up">
-          Services
+          {servicesSection.eyebrow}
         </p>
         <h2 className="display mt-4 max-w-3xl text-5xl text-ink sm:text-6xl md:text-7xl" data-reveal="up">
-          Let&apos;s build something worth remembering.
+          {servicesSection.title[0]}
+          <br />
+          {servicesSection.title[1]}
         </h2>
 
         <ul className="mt-16 divide-y divide-line border-y border-line">

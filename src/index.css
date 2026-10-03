@@ -21,65 +21,6 @@ html {
   overflow-x: hidden;
 }
 
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 300;
-  display: none;
-  width: 12px;
-  height: 12px;
-  border-radius: 9999px;
-  background: var(--color-ink);
-  pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: difference;
-  transition:
-    width 0.28s ease,
-    height 0.28s ease,
-    background 0.28s ease,
-    opacity 0.2s ease;
-}
-
-.custom-cursor.is-on {
-  display: block;
-}
-
-.custom-cursor.is-visible {
-  opacity: 1;
-}
-
-.custom-cursor-label {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  color: var(--color-ink);
-}
-
-.custom-cursor[data-state='hover'] {
-  width: 40px;
-  height: 40px;
-}
-
-.custom-cursor[data-state='view'],
-.custom-cursor[data-state='explore'] {
-  width: 80px;
-  height: 80px;
-  background: transparent;
-  border: 1px solid var(--color-ink);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  html.has-custom-cursor,
-  html.has-custom-cursor * {
-    cursor: none !important;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html.lenis,
   html.lenis body {

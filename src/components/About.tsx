@@ -1,17 +1,14 @@
-import { aboutPills, aboutSummary, impactHighlights, personalInfo, stats } from '../data/content'
+import { about, aboutPills, aboutSummary, impactHighlights, stats } from '../data/content'
 import AnimatedCounter from './AnimatedCounter'
 
 export default function About() {
   return (
     <section id="about" className="section-pad border-t border-line">
       <div className="mx-auto max-w-6xl">
-        <p className="eyebrow" data-reveal="up">
-          // System profile
-        </p>
-        <h2 className="display mt-4 text-5xl text-ink sm:text-6xl md:text-7xl" data-reveal="up">
-          Hello, I&apos;m
+        <h2 className="display text-5xl text-ink sm:text-6xl md:text-7xl" data-reveal="up">
+          {about.title[0]}
           <br />
-          {personalInfo.name}
+          {about.title[1]}
         </h2>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg" data-reveal="up">
           {aboutSummary}

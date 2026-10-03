@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { personalInfo } from '../data/content'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 
 interface LoadingScreenProps {
@@ -22,15 +21,15 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   useEffect(() => {
     let alive = true
     const start = performance.now()
-    const minMs = reducedMotion ? 280 : 1700
+    const minMs = reducedMotion ? 280 : 2200
 
     const tick = window.setInterval(() => {
-      setProgress((value) => Math.min(value + 5, 92))
-    }, 80)
+      setProgress((value) => Math.min(value + 6, 92))
+    }, 120)
 
     const statusTick = window.setInterval(() => {
       setStatusIndex((index) => (index + 1) % STATUS.length)
-    }, 380)
+    }, 700)
 
     const wait = Math.max(0, minMs - (performance.now() - start))
     const finish = window.setTimeout(() => {
@@ -51,7 +50,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden bg-void"
+      className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden bg-void px-6"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: 'easeInOut' }}
@@ -65,17 +64,19 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       />
 
       <p className="relative text-[10px] tracking-[0.36em] text-muted uppercase">Quality before the first click</p>
-      <p className="display relative mt-5 text-5xl text-ink sm:text-6xl">{personalInfo.logo}</p>
+      <p className="display relative mt-5 max-w-md text-center text-3xl leading-tight text-ink sm:text-4xl">
+        Proof before the product
+      </p>
 
-      <div className="relative mt-8 h-5 overflow-hidden">
+      <div className="relative mt-8 h-6 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.p
             key={STATUS[statusIndex]}
             className="text-[11px] tracking-[0.32em] text-ink/80 uppercase"
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.45 }}
           >
             {STATUS[statusIndex]}
           </motion.p>

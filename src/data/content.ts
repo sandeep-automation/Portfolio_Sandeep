@@ -1,3 +1,5 @@
+import { resumeFileName, resumePublicPath } from 'virtual:resume'
+
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
 export const personalInfo = {
@@ -11,17 +13,19 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/sandeep-gannamani-5ab26a1ba',
   github: 'https://github.com/sandeep-automation',
   experienceYears: '4+',
-  resumePath: asset('resume.pdf'),
+  resumePath: asset(resumePublicPath),
+  resumeFileName,
   seoTitle: 'Gannamani Sandeep — Senior Automation Engineer / SDET',
   seoDescription:
     'Senior Automation Engineer building premium test frameworks, interactive quality pipelines and reliable digital products.',
 }
 
-export const navLinks = [
+export const navLinks: Array<{ label: string; href: string; download?: string }> = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Work', href: '#work' },
+  { label: 'Resume', href: personalInfo.resumePath, download: personalInfo.resumeFileName },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -33,7 +37,11 @@ export const hero = {
     'Playwright frameworks that cut 30+ hours of manual work a sprint, shrink regression from hours to minutes, and hold in production.',
 }
 
-export const aboutSummary = `Automation Test Engineer with ${personalInfo.experienceYears} years specializing in Playwright (TypeScript/JavaScript). I design E2E frameworks serving 100K+ users with 95% automation coverage, 30+ hours of manual effort saved every sprint, and zero critical production defects.`
+export const about = {
+  title: ['What the work', 'returns.'] as const,
+}
+
+export const aboutSummary = `${personalInfo.experienceYears} years in Playwright (TypeScript/JavaScript). E2E frameworks serving 100K+ users — 95% automation coverage, 30+ hours saved every sprint, and zero critical production defects.`
 
 export const aboutPills = [
   { title: 'Playwright', detail: 'E2E & API' },
@@ -46,6 +54,10 @@ export const impactHighlights = [
   { kicker: '8h → 2h', text: 'Carrier regression while the network is still live. Parallel shards, not overnight waits.' },
   { kicker: '60% → 85%', text: 'Nokia OSS/BSS coverage without extra headcount. Quality scaled with the product.' },
   { kicker: 'Zero', text: 'Critical production defects across live releases. Failures die in CI, not in front of users.' },
+  { kicker: '10+ nodes', text: 'Dockerized Playwright shards across Jenkins and GitHub Actions. The suite scales with the release, not the headcount.' },
+  { kicker: '150+', text: 'Defects caught in JIRA before 100K+ users ever saw them. The operator path that failed is the one engineering opens.' },
+  { kicker: '50K+', text: 'SQL transactions a day on Gulftainer, plus 10K+ API calls. Gate, yard and invoice stay one story while cargo is still moving.' },
+  { kicker: '99.5%', text: 'Uptime SLA across 8 major port releases. Quality sat inside the live operation, not beside it.' },
 ]
 
 export const stats = [
@@ -127,7 +139,7 @@ export const projects = [
       'Production-grade Playwright (TypeScript) E2E suite for carrier-grade OSS/BSS infrastructure serving millions of subscribers.',
     technologies: ['Playwright', 'TypeScript', 'Docker', 'Node.js', 'Jenkins', 'GitHub Actions'],
     image: `${asset('work/nokia.png')}?v=2`,
-    link: 'https://github.com/sandeepgannamani',
+    link: personalInfo.github,
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
       'When a carrier order is placed, OSS/BSS systems provision network services for millions of subscribers. Quality has to keep up with that live flow — not inspect it after the fact.',
@@ -184,7 +196,7 @@ export const projects = [
       'Quality engineering for a port and cargo management system handling high-volume daily transactions across major releases.',
     technologies: ['API Testing', 'Postman', 'SQL', 'JIRA', 'REST APIs'],
     image: `${asset('work/gulftainer.png')}?v=2`,
-    link: 'https://github.com/sandeepgannamani',
+    link: personalInfo.github,
     realtimeTitle: 'How it runs in real time',
     realtimeIntro:
       'Every container move is a transaction: gate-in, yard, vessel, invoice. The quality loop has to prove those events stay consistent while the port is still running.',
@@ -229,6 +241,11 @@ export const projects = [
   },
 ]
 
+export const servicesSection = {
+  eyebrow: 'On a product team',
+  title: ['What I bring', 'to the squad.'] as const,
+}
+
 export const services = [
   {
     title: 'Test Automation Frameworks',
@@ -263,12 +280,22 @@ export const services = [
 ]
 
 export const whyWork = [
-  { title: '30+ hours back every sprint', text: 'Manual paths become one Playwright run. Teams ship instead of retesting the same screens.' },
-  { title: 'Hours of regression, not nights', text: 'Parallel shards and Docker cut carrier regression from about eight hours to two.' },
-  { title: 'Coverage that actually grew', text: 'Nokia OSS/BSS went 60% → 85% without hiring a bigger test army.' },
-  { title: 'Red means real', text: '40% less flakiness. A failed build is a defect, not a locator having a day.' },
-  { title: 'Zero critical in production', text: '150+ defects caught in JIRA. Live releases stayed clean for 100K+ users.' },
-  { title: 'People get better too', text: 'Mentored junior SDETs on architecture and BDD — 20% more team throughput.' },
+  {
+    title: 'Quality sits in the pipeline',
+    text: 'Playwright suites gate Jenkins and GitHub Actions across 3+ environments. A release does not move until the suite has spoken.',
+  },
+  {
+    title: 'Accessibility on the live path',
+    text: 'Playwright + axe-core for WCAG 2.1 across 100K+ user surfaces. Inclusion is a release signal, not a later audit.',
+  },
+  {
+    title: 'The failed path is the ticket',
+    text: 'Allure, HTML reports and traces land in JIRA with the operator journey that broke. Engineering opens the same path — not a reconstructed guess.',
+  },
+  {
+    title: 'People get better too',
+    text: 'Mentored 2 junior SDETs on architecture and BDD — 20% more team throughput.',
+  },
 ]
 
 export const achievements = [
@@ -280,10 +307,3 @@ export const achievements = [
   { title: '99.5% uptime SLA — 8 major releases', detail: 'Gulftainer port & cargo stayed live. Quality sat inside the operation, not beside it.' },
 ]
 
-export const projectTypes = [
-  'Test Automation',
-  'Quality Consulting',
-  'Framework Design',
-  'CI/CD Pipelines',
-  'Something else',
-]
