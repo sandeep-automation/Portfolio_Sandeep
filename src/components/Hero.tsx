@@ -21,31 +21,30 @@ export default function Hero() {
         <p className="mt-3 text-sm leading-relaxed text-muted">{hero.support}</p>
       </div>
 
-      <p className="pointer-events-none absolute bottom-8 left-5 z-20 text-[10px] tracking-[0.32em] text-muted uppercase sm:left-10 lg:left-16">
-        Scroll to explore
-      </p>
-
-      <div className="absolute right-5 bottom-8 z-20 flex gap-2 sm:right-10 lg:right-16">
-        <a
-          href="#work"
-          className="border border-line px-4 py-2 text-[10px] tracking-[0.18em] text-ink uppercase transition-colors hover:border-line-strong"
-          onClick={(event) => {
-            event.preventDefault()
-            scrollToId('#work')
-          }}
-        >
-          View My Work
-        </a>
-        <a
-          href="#contact"
-          className="border border-line bg-ink px-4 py-2 text-[10px] tracking-[0.18em] text-void uppercase transition-colors hover:bg-white"
-          onClick={(event) => {
-            event.preventDefault()
-            scrollToId('#contact')
-          }}
-        >
-          Contact Me
-        </a>
+      <div className="absolute right-5 bottom-8 left-5 z-20 flex flex-col gap-5 sm:left-10 sm:flex-row sm:items-end sm:justify-between lg:left-16 lg:right-16">
+        <p className="text-[10px] tracking-[0.32em] text-muted uppercase">Scroll to explore</p>
+        <div className="flex gap-2">
+          <a
+            href="#work"
+            className="border border-line px-4 py-2 text-[10px] tracking-[0.18em] text-ink uppercase transition-colors hover:border-line-strong"
+            onClick={(event) => {
+              event.preventDefault()
+              scrollToId('#work')
+            }}
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            className="border border-line bg-ink px-4 py-2 text-[10px] tracking-[0.18em] text-void uppercase transition-colors hover:bg-white"
+            onClick={(event) => {
+              event.preventDefault()
+              scrollToId('#contact')
+            }}
+          >
+            Contact Me
+          </a>
+        </div>
       </div>
     </section>
   )
