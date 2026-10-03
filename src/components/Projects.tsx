@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { ArrowUpRight, X } from 'lucide-react'
 import { projects } from '../data/content'
+import { startLenis, stopLenis, getLenisScroll, restoreLenisScroll } from '../hooks/useLenis'
 
 type Project = (typeof projects)[number]
 
@@ -9,13 +11,20 @@ export default function Projects() {
 
   useEffect(() => {
     if (!active) return
+    const html = document.documentElement
+    const scroll = getLenisScroll()
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setActive(null)
     }
+    html.classList.add('overlay-open')
     document.body.style.overflow = 'hidden'
+    stopLenis()
     window.addEventListener('keydown', onKey)
     return () => {
+      html.classList.remove('overlay-open')
       document.body.style.overflow = ''
+      startLenis()
+      restoreLenisScroll(scroll)
       window.removeEventListener('keydown', onKey)
     }
   }, [active])
@@ -37,17 +46,27 @@ export default function Projects() {
             <button
               type="button"
               data-cursor="explore"
-              className="block w-full overflow-hidden text-left"
+              className="relative block w-full overflow-hidden text-left"
               onClick={() => setActive(project)}
               aria-haspopup="dialog"
               aria-expanded={active?.id === project.id}
-              aria-label={`Open live walkthrough for ${project.title}`}
+              aria-label={`Explore how ${project.title} runs in real time`}
             >
               <img
                 src={project.image}
-                alt={`${project.title} — open live walkthrough`}
+                alt={`${project.title} — explore live walkthrough`}
                 className="aspect-[16/9] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/80 via-void/10 to-transparent transition-opacity duration-500 group-hover:from-void/90" />
+              <span className="pointer-events-none absolute right-4 bottom-4 left-4 flex items-end justify-between gap-4">
+                <span>
+                  <span className="block text-[10px] tracking-[0.28em] text-ink uppercase">Explore</span>
+                  <span className="mt-1 block text-[11px] tracking-[0.16em] text-ink/70 uppercase">
+                    How this runs in real time
+                  </span>
+                </span>
+                <ArrowUpRight size={16} className="mb-0.5 text-ink" />
+              </span>
             </button>
             <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
@@ -62,11 +81,11 @@ export default function Projects() {
               </div>
               <button
                 type="button"
-                data-cursor="view"
+                data-cursor="explore"
                 onClick={() => setActive(project)}
                 className="inline-flex items-center gap-2 text-[11px] tracking-[0.22em] text-ink uppercase"
               >
-                How it works
+                Explore real time
                 <ArrowUpRight
                   size={14}
                   className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -77,7 +96,7 @@ export default function Projects() {
         ))}
       </div>
 
-      {active && <ProjectWalkthrough project={active} onClose={() => setActive(null)} />}
+      {active && createPortal(<ProjectWalkthrough project={active} onClose={() => setActive(null)} />, document.body)}
     </section>
   )
 }
@@ -85,7 +104,8 @@ export default function Projects() {
 function ProjectWalkthrough({ project, onClose }: { project: Project; onClose: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-[200] overflow-y-auto bg-[#050505]"
+      className="fixed inset-0 z-[250] overflow-y-auto bg-void"
+      data-lenis-prevent
       role="dialog"
       aria-modal="true"
       aria-labelledby={`${project.id}-walkthrough`}
@@ -96,7 +116,10 @@ function ProjectWalkthrough({ project, onClose }: { project: Project; onClose: (
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-6">
-          <p className="eyebrow">{project.period}</p>
+          <div>
+            <p className="eyebrow">Live walkthrough</p>
+            <p className="mt-2 text-[11px] tracking-[0.2em] text-muted uppercase">{project.period}</p>
+          </div>
           <button
             type="button"
             onClick={onClose}
@@ -122,7 +145,10 @@ function ProjectWalkthrough({ project, onClose }: { project: Project; onClose: (
               <span className="text-[11px] tracking-[0.2em] text-muted">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h5 className="display text-2xl text-ink sm:text-3xl">{step.title}</h5>
+              <div>
+                <p className="text-[10px] tracking-[0.22em] text-muted uppercase">{step.moment}</p>
+                <h5 className="display mt-2 text-2xl text-ink sm:text-3xl">{step.title}</h5>
+              </div>
               <p className="text-sm leading-relaxed text-muted">{step.text}</p>
             </li>
           ))}

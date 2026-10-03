@@ -3,7 +3,7 @@ import { scrollToId } from '../hooks/useLenis'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen overflow-hidden bg-void">
+    <section id="home" className="relative h-screen overflow-hidden">
       <h1 className="sr-only">
         {personalInfo.name} — {personalInfo.role}
       </h1>

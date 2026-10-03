@@ -10,7 +10,7 @@ Use this file as the rebuild spec. The live site in this repo is the source of t
 - Location: Hyderabad, India
 - Email: `sandeepgannamani55@gmail.com`
 - Phone: `+91-9502228584`
-- LinkedIn: `https://linkedin.com/in/sandeepgannamani`
+- LinkedIn: `https://www.linkedin.com/in/sandeep-gannamani-5ab26a1ba`
 - GitHub: `https://github.com/sandeepgannamani`
 - Experience: 4+ years at Tata Consultancy Services (TCS), Hyderabad — March 2022 – Present
 
@@ -20,9 +20,9 @@ Never use Sri, Sushmita, Aisha Rao, LeetCode, or any other placeholder persona. 
 
 Editorial dark, not neon, not glassmorphism, not a 3D scene.
 
-- Background (void): `#050505`
+- Background (void): `#0b0d12` with a soft indigo wash (top) and warm gold dust (bottom)
 - Text (ink): `#f3efe8`
-- Muted: `#8a857c`
+- Muted: `#9a958c`
 - Hairlines: `rgba(243, 239, 232, 0.12)` / strong `0.28`
 - Display type: Instrument Serif
 - UI type: Inter
@@ -102,7 +102,7 @@ Single role: Automation Test Engineer, TCS, Hyderabad, March 2022 – Present. K
 
 ## Selected Work
 
-Two case studies with large 16:9 images (`/work/nokia.png`, `/work/gulftainer.png`). Clicking the image or `How it works` opens a solid `#050505` overlay (not transparent) with a numbered real-time walkthrough, outcomes, and tech. Escape and backdrop click close it. Cursor hints: `explore` on image, `view` on the link.
+Two case studies with large 16:9 images (`/work/nokia.png`, `/work/gulftainer.png`). Clicking the image or `Explore real time` opens a solid void overlay with a numbered real-time walkthrough, outcomes, and tech. Escape and backdrop click close it. Cursor hints: `explore` on image.
 
 Keep the Nokia OSS/BSS and Gulftainer port/cargo walkthrough copy as written in `content.ts`. Do not replace with generic project cards.
 

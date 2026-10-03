@@ -4,6 +4,22 @@ import { gsap, initGsap, prefersReducedMotion, ScrollTrigger } from '../lib/gsap
 
 let lenis: Lenis | null = null
 
+export function stopLenis() {
+  lenis?.stop()
+}
+
+export function startLenis() {
+  lenis?.start()
+}
+
+export function getLenisScroll() {
+  return lenis?.scroll ?? window.scrollY
+}
+
+export function restoreLenisScroll(value: number) {
+  lenis?.scrollTo(value, { immediate: true })
+}
+
 export function scrollToId(id: string) {
   const target = document.getElementById(id.replace('#', ''))
   if (!target) return

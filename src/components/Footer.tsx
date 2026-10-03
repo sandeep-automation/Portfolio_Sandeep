@@ -10,7 +10,13 @@ export default function Footer() {
         </a>
         <p>Built with curiosity + code</p>
         <div className="flex items-center gap-5">
-          <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Sandeep Gannamani on LinkedIn"
+            title="LinkedIn"
+          >
             <LinkedInIcon size={14} />
           </a>
           <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">

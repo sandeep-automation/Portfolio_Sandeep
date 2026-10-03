@@ -40,8 +40,13 @@ export default function Contact() {
             <a href={`mailto:${personalInfo.email}`} className="btn-primary">
               Start a Project
             </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              Let&apos;s Connect
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              LinkedIn
             </a>
           </div>
 
@@ -52,8 +57,13 @@ export default function Contact() {
               </a>
             </li>
             <li>
-              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
-                LinkedIn
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ink"
+              >
+                linkedin.com/in/sandeep-gannamani-5ab26a1ba
               </a>
             </li>
             <li>

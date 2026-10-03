@@ -6,9 +6,9 @@
   --font-display: 'Instrument Serif', 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --color-void: #050505;
+  --color-void: #0b0d12;
   --color-ink: #f3efe8;
-  --color-muted: #8a857c;
+  --color-muted: #9a958c;
   --color-line: rgba(243, 239, 232, 0.12);
   --color-line-strong: rgba(243, 239, 232, 0.28);
 }
@@ -96,10 +96,25 @@ html {
   }
 }
 
+html.overlay-open,
+html.overlay-open body {
+  overflow: hidden !important;
+}
+
+html.overlay-open.lenis,
+html.overlay-open.lenis body {
+  height: auto !important;
+  transform: none !important;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--color-void);
+  background-color: var(--color-void);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 85% -8%, rgba(88, 118, 255, 0.18), transparent 58%),
+    radial-gradient(ellipse 70% 45% at -10% 105%, rgba(201, 168, 118, 0.1), transparent 52%);
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -181,7 +196,7 @@ body {
 }
 
 .field option {
-  background: #111;
+  background: #12141b;
   color: #f3efe8;
 }
 
